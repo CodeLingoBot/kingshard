@@ -305,7 +305,7 @@ func TestBuildValue(t *testing.T) {
 	}
 }
 
-// Ensure DONTESCAPE is not escaped
+// TestEncode ensures DONTESCAPE is not escaped
 func TestEncode(t *testing.T) {
 	if SqlEncodeMap[DONTESCAPE] != DONTESCAPE {
 		t.Errorf("Encode fail: %v", SqlEncodeMap[DONTESCAPE])

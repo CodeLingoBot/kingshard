@@ -21,7 +21,7 @@ import (
 	"unsafe"
 )
 
-// no copy to change slice to string
+// String: no copy to change slice to string
 // use your own risk
 func String(b []byte) (s string) {
 	pbytes := (*reflect.SliceHeader)(unsafe.Pointer(&b))
@@ -31,7 +31,7 @@ func String(b []byte) (s string) {
 	return
 }
 
-// no copy to change string to slice
+// Slice: no copy to change string to slice
 // use your own risk
 func Slice(s string) (b []byte) {
 	pbytes := (*reflect.SliceHeader)(unsafe.Pointer(&b))

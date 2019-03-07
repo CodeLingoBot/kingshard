@@ -84,7 +84,7 @@ var Debug bool = false
 // look at test query_test.go/TestFingerprintWithNumberInDbName.
 var ReplaceNumbersInWords = false
 
-// Fingerprint returns the canonical form of q. The primary transformations are:
+// GetFingerprint: Fingerprint returns the canonical form of q. The primary transformations are:
 //   - Replace values with ?
 //   - Collapse whitespace
 //   - Remove comments

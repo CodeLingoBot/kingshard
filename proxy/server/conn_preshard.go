@@ -159,7 +159,7 @@ func (c *ClientConn) GetTransExecDB(tokens []string, sql string) (*ExecuteDB, er
 	return executeDB, nil
 }
 
-//if sql need shard return nil, else return the unshard db
+// GetExecDB: if sql need shard return nil, else return the unshard db
 func (c *ClientConn) GetExecDB(tokens []string, sql string) (*ExecuteDB, error) {
 	tokensLen := len(tokens)
 	if 0 < tokensLen {

@@ -36,7 +36,7 @@ func (e *SqlError) Error() string {
 	return fmt.Sprintf("ERROR %d (%s): %s", e.Code, e.State, e.Message)
 }
 
-//default mysql error, must adapt errname message format
+// NewDefaultError: default mysql error, must adapt errname message format
 func NewDefaultError(errCode uint16, args ...interface{}) *SqlError {
 	e := new(SqlError)
 	e.Code = errCode

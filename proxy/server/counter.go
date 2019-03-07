@@ -49,7 +49,7 @@ func (counter *Counter) IncrSlowLogTotal() {
 	atomic.AddInt64(&counter.SlowLogTotal, 1)
 }
 
-//flush the count per second
+// FlushCounter: flush the count per second
 func (counter *Counter) FlushCounter() {
 	atomic.StoreInt64(&counter.OldClientQPS, counter.ClientQPS)
 	atomic.StoreInt64(&counter.OldErrLogTotal, counter.ErrLogTotal)

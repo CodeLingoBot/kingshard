@@ -47,7 +47,7 @@ func GetDBName(sql string) (string, error) {
 	return "", fmt.Errorf("statement '%s' is not a dml", sql)
 }
 
-//Get the database and table name
+// GetDBTable gets the database and table name
 func GetDBTable(token string) (string, string) {
 	if len(token) == 0 {
 		return "", ""
@@ -91,7 +91,7 @@ func IsColName(node ValExpr) bool {
 	return ok
 }
 
-// IsVal returns true if the ValExpr is a string, number or value arg.
+// IsValue returns true if the ValExpr is a string, number or value arg.
 // NULL is not considered to be a value.
 func IsValue(node ValExpr) bool {
 	switch node.(type) {
@@ -101,7 +101,7 @@ func IsValue(node ValExpr) bool {
 	return false
 }
 
-// HasINCaluse returns true if an yof the conditions has an IN clause.
+// HasINClause returns true if an yof the conditions has an IN clause.
 func HasINClause(conditions []BoolExpr) bool {
 	for _, node := range conditions {
 		if c, ok := node.(*ComparisonExpr); ok && c.Operator == AST_IN {

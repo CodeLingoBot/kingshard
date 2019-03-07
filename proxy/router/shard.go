@@ -163,7 +163,7 @@ func (s *NumRangeShard) EqualStop(key interface{}, index int) bool {
 type DateYearShard struct {
 }
 
-//the format of date is: YYYY-MM-DD HH:MM:SS,YYYY-MM-DD or unix timestamp(int)
+// FindForKey: The format of date is: YYYY-MM-DD HH:MM:SS,YYYY-MM-DD or unix timestamp(int)
 func (s *DateYearShard) FindForKey(key interface{}) (int, error) {
 	switch val := key.(type) {
 	case int:
@@ -188,7 +188,7 @@ func (s *DateYearShard) FindForKey(key interface{}) (int, error) {
 type DateMonthShard struct {
 }
 
-//the format of date is: YYYY-MM-DD HH:MM:SS,YYYY-MM-DD or unix timestamp(int)
+// FindForKey: The format of date is: YYYY-MM-DD HH:MM:SS,YYYY-MM-DD or unix timestamp(int)
 func (s *DateMonthShard) FindForKey(key interface{}) (int, error) {
 	timeFormat := "2006-01-02"
 	switch val := key.(type) {
@@ -236,7 +236,7 @@ func (s *DateMonthShard) FindForKey(key interface{}) (int, error) {
 type DateDayShard struct {
 }
 
-//the format of date is: YYYY-MM-DD HH:MM:SS,YYYY-MM-DD or unix timestamp(int)
+// FindForKey: The format of date is: YYYY-MM-DD HH:MM:SS,YYYY-MM-DD or unix timestamp(int)
 func (s *DateDayShard) FindForKey(key interface{}) (int, error) {
 	timeFormat := "2006-01-02"
 	switch val := key.(type) {

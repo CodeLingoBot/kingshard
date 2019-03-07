@@ -32,7 +32,7 @@ func (s *ApiServer) GetAllowIps(c echo.Context) error {
 	return c.JSON(http.StatusOK, allowIps)
 }
 
-//add one or multi ips
+// AddAllowIps adds one or multi ips
 func (s *ApiServer) AddAllowIps(c echo.Context) error {
 	args := struct {
 		AllowIPs []string `json:"allow_ips"`
@@ -50,7 +50,7 @@ func (s *ApiServer) AddAllowIps(c echo.Context) error {
 	return c.JSON(http.StatusOK, "ok")
 }
 
-//delete one or multi ips
+// DelAllowIps: delete one or multi ips
 func (s *ApiServer) DelAllowIps(c echo.Context) error {
 	args := struct {
 		AllowIPs []string `json:"allow_ips"`
@@ -81,7 +81,7 @@ type DBStatus struct {
 	PopConnCount   	int64  `json:"pop_conn_count"`
 }
 
-//get nodes status
+// GetNodesStatus gets nodes status
 func (s *ApiServer) GetNodesStatus(c echo.Context) error {
 	var masterStatus, slaveStatus DBStatus
 

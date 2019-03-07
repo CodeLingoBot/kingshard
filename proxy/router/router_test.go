@@ -190,7 +190,7 @@ schema_list :
 	return r
 }
 
-//TODO YYYY-MM-DD HH:MM:SS,YYYY-MM-DD test
+// TODO YYYY-MM-DD HH:MM:SS,YYYY-MM-DD test
 func TestParseDateRule(t *testing.T) {
 	var s = `
 schema_list:

@@ -283,7 +283,7 @@ func includeNode(nodes []string, node string) bool {
 	return false
 }
 
-//build a router plan
+// BuildPlan: build a router plan
 func (r *Router) BuildPlan(db string, statement sqlparser.Statement) (*Plan, error) {
 	//因为实现Statement接口的方法都是指针类型，所以type对应类型也是指针类型
 	switch stmt := statement.(type) {

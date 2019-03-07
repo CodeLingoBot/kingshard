@@ -326,7 +326,7 @@ func (n *Node) ParseMaster(masterStr string) error {
 	return err
 }
 
-//slaveStr(127.0.0.1:3306@2,192.168.0.12:3306@3)
+// ParseSlave: slaveStr(127.0.0.1:3306@2,192.168.0.12:3306@3)
 func (n *Node) ParseSlave(slaveStr string) error {
 	var db *DB
 	var weight int

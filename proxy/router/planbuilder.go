@@ -471,7 +471,7 @@ func (plan *Plan) getInsertTableIndex(vals sqlparser.Values) ([]int, error) {
 	return cleanList(tableIndexs), nil
 }
 
-// find shard key index in insert or replace SQL
+// GetIRKeyIndex: find shard key index in insert or replace SQL
 // plan.Rule cols must not nil
 func (plan *Plan) GetIRKeyIndex(cols sqlparser.Columns) error {
 	if plan.Rule == nil {

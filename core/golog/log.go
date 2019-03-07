@@ -89,7 +89,7 @@ func New(handler Handler, flag int) *Logger {
 	return l
 }
 
-//new a default logger with specified handler and flag: Ltime|Lfile|Llevel
+// NewDefault: new a default logger with specified handler and flag: Ltime|Lfile|Llevel
 func NewDefault(handler Handler) *Logger {
 	return New(handler, Ltime|Lfile|Llevel)
 }
@@ -156,7 +156,7 @@ func (l *Logger) Close() {
 	l.handler.Close()
 }
 
-//set log level, any log level less than it will not log
+// SetLevel: set log level, any log level less than it will not log
 func (l *Logger) SetLevel(level int) {
 	l.level = level
 }
@@ -165,7 +165,7 @@ func (l *Logger) Level() int {
 	return l.level
 }
 
-//a low interface, maybe you can use it for your special log format
+// Output: a low interface, maybe you can use it for your special log format
 //but it may be not exported later......
 func (l *Logger) Output(callDepth int, level int, format string, v ...interface{}) {
 	if l.level > level {
